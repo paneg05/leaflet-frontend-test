@@ -38,7 +38,7 @@ $.getJSON('https://terraq.com.br/api/teste-leaflet/pontos',(data)=>{}).done(
                 pointToLayer: function (feature, latlng) {
                     var iconUrl = feature.properties.icon;
                     var featureIcon = L.icon({
-                        iconUrl:"https://www.freeiconspng.com/thumbs/warning-icon-png/warning-icon-24.png",
+                        iconUrl:iconUrl,
                         iconSize: [32, 37],
                         iconAnchor: [16, 37],
                         popupAnchor: [0, -28]
