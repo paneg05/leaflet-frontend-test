@@ -20,11 +20,16 @@ $.getJSON('https://terraq.com.br/api/teste-leaflet/pontos',(data)=>{}).done(
     }
 )
 
-
+//adiciona dados aos popups dos pontos
     function onEachFeature(feature, layer) {
         var popupContent = '<p>' + feature.geometry.type + '</p>';
         if (feature.properties && feature.properties.popupContent) {
-
+            //testa se as propriedades existem dentro do objeto e as adiciona aos popups
+            feature.properties.precipitacao? popupContent += "<p>precipitação: " + feature.properties.precipitacao+"</p>":popupContent
+            feature.properties.temperatura? popupContent += "<p>temperatura: " + feature.properties.temperatura+"</p>":popupContent
+            feature.properties.umidade? popupContent += "<p>umidade:"+ feature.properties.umidade+"</p>":popupContent
+            feature.properties.vento? popupContent += "<p>vento: "+feature.properties.vento+"</p>":popupContent
+            feature.properties.visibilidade? popupContent += "<p>visibilidade: "+feature.properties.visibilidade+"</p>":popupContent
             popupContent += "<br>"+feature.properties.popupContent;
 
         }
