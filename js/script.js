@@ -11,6 +11,18 @@ $.getJSON("https://terraq.com.br/api/teste-leaflet/visao-inicial", function(data
                      data.initial_view.zoom
                      )
        console.log(data)
+        
+       //adicionando layers
+        let bt= L.tileLayer(data.tile_layers[0].url,{})
+        let st = L.tileLayer(data.tile_layers[1].url,{})
+
+        let baselayers = {
+            openstreet:bt,
+            satelite:st
+        }
+        //adicionando controle de layers
+        L.control.layers(baselayers).addTo(map)
+
     }
 )
 
@@ -19,6 +31,8 @@ $.getJSON('https://terraq.com.br/api/teste-leaflet/pontos',(data)=>{}).done(
         console.log(data)
     }
 )
+
+let bs = L.tileLayer()
 
 //adiciona dados aos popups dos pontos
     function onEachFeature(feature, layer) {
