@@ -9,6 +9,71 @@ html, body {
     max-height: 100%;
 }
 
-#map{
-    width: 100vw;
+
+
+/***perfil****/
+.user{
+    z-index: 1000;
+    position: fixed;
+    top: 10vh;
+    left: 10px;
+    padding: 10px;
+    background-color: rgb(248, 239, 239);
+    box-shadow: 0px 0px 5px black;
+    border-radius: 4px;
+
+
+}
+
+
+.user img{
+    border-bottom: 0px;
+    padding-bottom: 0px;
+}
+.user .nome{
+    padding-top: 10px;
+    margin-top: 5px;
+    border-top: 1px solid #ccc;
+}
+
+.close{
+    width: 73px;
+    height: 73px;
+    transition: all 0,5s ease;
+    }
+
+.close p{
+    display: none;
+
+}
+
+
+/**** botões *******/
+.btn{
+    z-index: 1001;
+
+    position: fixed;
+    top:10vh;
+    right:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+}
+
+.btn-map,.btn-chart{
+    width: 44px;
+    height: 44px;
+    margin:5px 0 5px 0;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 4px;
+}
+
+
+/*CHART*/
+
+.chart{
+    height: 100vh;
+    width: 100vh;
 }
